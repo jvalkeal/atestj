@@ -1,0 +1,40 @@
+# Generated with JReleaser 1.6.0 at 2023-06-30T08:51:26.846935859+01:00
+project:
+  name: demo
+  version: 0.0.1-M1
+  description: Demo App
+  longDescription: Demo App
+  authors:
+    - jvalkeal
+  license: Apache-2.0
+  links:
+    homepage: https://github.com/jvalkeal/atestj
+  java:
+    groupId: com.example.demo
+    version: 17
+  inceptionYear: 2023
+
+assemble:
+  javaArchive:
+    demo:
+      active: ALWAYS
+      mainJar:
+        path: build/libs/{{distributionName}}-{{projectVersion}}.jar
+
+release:
+  github:
+    owner: jvalkeal
+    name: atestj
+
+packagers:
+  brew:
+    active: ALWAYS
+    tap:
+      owner: jvalkeal
+      name: homebrew-atestj-tap
+
+
+# distributions:
+#   demo:
+#     artifacts:
+#       - path: build/libs/{{distributionName}}-{{projectVersion}}.jar
